@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>bracketField</title>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="../platforms/android/app/src/main/assets/www/css/index.css" type="text/css">
+        <link rel="stylesheet" href="../node_modules/cordova-android/bin/templates/project/assets/www/css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="css/index.css" type="text/css">
+           <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+        
+       
+        <div class="app">
+            
+            <!-- inputs out title -->
+
+            <!-- shows bracket in pictured format
+            
+            XX
+  game1     vs ------
+            XX       |
+                     |------|
+            XX       |      | 
+  game2     vs ------       |
+            XX              |
+                            |
+                            |------
+                            |
+            XX              |
+   game3    vs ------       |
+            XX       |      |
+                     |------|
+            XX       |
+    game4   vs ------
+            XX
+            
+            user can select any game and it takes them to another screen that they can select winner.
+            user before or after selection of winner, can alternate between bracket and games, and matches will update based on users selection.
+            
+            winner gets GREEN space and moves up bracket
+            loser gets RED space and crossed off
+            -->
+            <h1><span id="gameTitle"></span></h1>
+           <table style="height:250px;width:450px">
+          <tr>
+              <td> <form action="gameField.html"><button  id = "round1" class="buttonDefault" type="submit" onclick="Game1()">  <span id = "player1"></span> <br>-------VS-------<br> <span id = "player2"></span> </button> </td>
+              <td><div class =" image3"></div></td>
+          </tr>
+          
+           <tr>
+            <td> </td>
+            <td> <button  id = "round2" class="buttonDisabled" type="button"> <br>-------VS-------<br> </button>  </td>
+          </tr>
+          
+          <tr>
+            <td>  <button  id = "round3" class="buttonDefault" type="submit" onclick="Game2()"> <span id = "player3"></span> <br>-------VS-------<br> <span id = "player4"></span> </button> </td>
+            <td><div class =" image4"></td>
+          </tr>
+        </table>
+
+            
+            
+            
+            
+        </div>
+        
+        <script>
+            document.getElementById("player1").innerHTML = localStorage.getItem("player1");
+             document.getElementById("player2").innerHTML = localStorage.getItem("player2");
+              document.getElementById("player3").innerHTML = localStorage.getItem("player3");
+               document.getElementById("player4").innerHTML = localStorage.getItem("player4");
+                document.getElementById("gameTitle").innerHTML = localStorage.getItem("gameTitle");
+             
+             function Game1(){
+                 
+                 var left = localStorage.getItem("player1");
+                 localStorage.setItem("left", left);
+                 
+                 var right = localStorage.getItem("player2");
+                 localStorage.setItem("right", right);
+                 return false;
+             }
+             
+              function Game2(){
+                 
+                 var left = localStorage.getItem("player3");
+                 localStorage.setItem("left", left);
+                 
+                 var right = localStorage.getItem("player4");
+                 localStorage.setItem("right", right);
+                 return false;
+                
+             }
+             
+            
+             
+        </script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

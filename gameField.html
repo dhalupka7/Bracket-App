@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>gameField</title>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="../platforms/android/app/src/main/assets/www/css/index.css" type="text/css">
+        <link rel="stylesheet" href="../node_modules/cordova-android/bin/templates/project/assets/www/css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="css/index.css" type="text/css">
+           <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+    </head>
+
+    <body>
+        
+       
+        <div class="app">
+            
+            <h1>Select Winner</h1>
+          <div style="width: 50%; float:left">                                                      <!-- moves everything to left side, enlarges name and button -->
+              <h2><span style="font-size:50px" id = "left"></span> </h2>
+              <button style="width:200px; height:180px"  id = "win1" class="buttonX" type="button">^</button>
+            </div>
+
+        <div style="width: 50%; float:right">                                                        <!-- moves everything to right side, enlarges name and button -->
+            <h2><span style="font-size:50px" id = "right"></span> </h2>
+            <button style="width:200px; height:180px" id = "win2" class="buttonX" type="button">^</button>
+        </div>
+              
+        </div>
+        
+         <script>
+            document.getElementById("left").innerHTML = localStorage.getItem("left");
+            document.getElementById("right").innerHTML = localStorage.getItem("right");
+           
+        </script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

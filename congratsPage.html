@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+       
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="../platforms/android/app/src/main/assets/www/css/index.css" type="text/css">
+        <link rel="stylesheet" href="../node_modules/cordova-android/bin/templates/project/assets/www/css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="css/index.css" type="text/css">
+           <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CongratsPage</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Congratulations!!!</h1>
+
+               <div class =" image2"></div>
+               
+               <h2><span id="gameTitle"></span> winner:</h2><br>
+               <h2>***Winner Name***</h2>
+                
+              
+              <button  id = "numP" class="buttonX" onclick="index()" type="button"  >Main Menu </button>
+              
+            
+        </div>
+         <script>
+            document.getElementById("winner").innerHTML = localStorage.getItem("winner"); 
+             document.getElementById("gameTitle").innerHTML = localStorage.getItem("gameTitle");
+        </script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
