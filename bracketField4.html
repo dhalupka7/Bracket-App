@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>bracketField4</title>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="../platforms/android/app/src/main/assets/www/css/index.css" type="text/css">
+        <link rel="stylesheet" href="../node_modules/cordova-android/bin/templates/project/assets/www/css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="css/index.css" type="text/css">
+           <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+        
+        <div class="app" style="zoom:76%">
+            
+            <!-- inputs out title -->
+
+            <!-- shows bracket in pictured format
+            
+            XX
+  game1     vs ------
+            XX       |
+                     |------|
+            XX       |      | 
+  game2     vs ------       |
+            XX              |
+                            |
+                            |------
+                            |
+            XX              |
+   game3    vs ------       |
+            XX       |      |
+                     |------|
+            XX       |
+    game4   vs ------
+            XX
+            
+            user selects winner from each game.
+            user before or after selection of winner, can alternate between bracket and games, and matches will update based on users selection.
+            
+            winner gets GREEN space and moves up bracket
+            loser gets RED space and crossed off
+            -->
+            <h1> <span id="gameTitle"></span> </h1> <!-- Table for 4 or less players-->
+            
+ 
+<table id="4max" >  
+          <tr>
+              <td><button  id = "play1" class="buttonDef" type="submit" onclick="Game41()">  <span id = "player1"></span><br>-------VS-------<br> </button> <button  id = "play2" class="buttonDef" type="submit" onclick="Game42()">  <span id = "player2"></span> </button> </td>
+              <td><div class =" image3"></div></td>
+          </tr>
+          
+           <tr>
+              <td> </td>
+              <td> <button  id = "play5" class="buttonDis" type="submit" onclick="Game45()">  <span id = "winner1"></span> <br>-------VS-------<br> </button> <button  id = "play6" class="buttonDis" type="submit" onclick="Game46()">  <span id = "winner2"></span> </button>  </td>
+          </tr>
+          
+          <tr>
+              <td><button  id = "play3" class="buttonDef" type="submit" onclick="Game43()">  <span id = "player3"></span> <br>-------VS-------<br> </button> <button  id = "play4" class="buttonDef" type="submit" onclick="Game44()">  <span id = "player4"></span> </button> </td>
+              <td><div class =" image4"></div></td>
+          </tr>
+</table>
+            
+   
+            
+        </div>
+        
+                
+                
+        <script>
+     
+
+               document.getElementById("gameTitle").innerHTML = localStorage.getItem("gameTitle");
+            document.getElementById("player1").innerHTML = localStorage.getItem("player1");
+             document.getElementById("player2").innerHTML = localStorage.getItem("player2");
+              document.getElementById("player3").innerHTML = localStorage.getItem("player3");
+               document.getElementById("player4").innerHTML = localStorage.getItem("player4");
+      
+                
+              
+              function check1()                                                 // Functions to check whether previous game was selected
+              {
+               if(document.getElementById("play1").className !== "buttonDef" && document.getElementById("play3").className !== "buttonDef")  
+               {
+                    document.getElementById("play5").className = "buttonFinal";
+                    document.getElementById("play6").className = "buttonFinal";
+               }
+              }
+     
+             
+             
+             
+             function Game41()                                                  // Gets ID of game, changes classes of players to won or lost, saves winner onto next game
+             {
+              document.getElementById("play1").className = "buttonWin";
+               document.getElementById("play2").className = "buttonLose";
+               document.getElementById("winner1").innerHTML = localStorage.getItem("player1");
+                localStorage.setItem("winner1",localStorage.getItem("player1"));
+               check1();
+               
+             }
+             function Game42()
+             {
+              document.getElementById("play2").className = "buttonWin";
+               document.getElementById("play1").className = "buttonLose";
+               document.getElementById("winner1").innerHTML = localStorage.getItem("player2");
+               localStorage.setItem("winner1",localStorage.getItem("player2"));
+               check1();
+             }
+             
+              function Game43()
+             {
+              document.getElementById("play3").className = "buttonWin";
+               document.getElementById("play4").className = "buttonLose";
+               document.getElementById("winner2").innerHTML = localStorage.getItem("player3");
+                localStorage.setItem("winner2",localStorage.getItem("player3"));
+               check1();
+             }
+             function Game44()
+             {
+              document.getElementById("play4").className = "buttonWin";
+               document.getElementById("play3").className = "buttonLose";
+               document.getElementById("winner2").innerHTML = localStorage.getItem("player4");
+                localStorage.setItem("winner2",localStorage.getItem("player4"));
+               check1();
+             }
+             
+             function Game45()
+             {
+                 if(document.getElementById("play5").className === "buttonDis")
+                 {
+                    return;
+                 }
+              document.getElementById("play5").className = "buttonWin";
+               document.getElementById("play6").className = "buttonLose";
+               localStorage.setItem("finalWinner",localStorage.getItem("winner1"));
+               window.location.href="congratsPage.html"; 
+             }
+             function Game46()
+             {
+                 if(document.getElementById("play6").className === "buttonDis")
+                 {
+                    return;
+                 }
+              document.getElementById("play6").className = "buttonWin";
+               document.getElementById("play5").className = "buttonLose";
+               localStorage.setItem("finalWinner",localStorage.getItem("winner2"));
+               window.location.href="congratsPage.html"; 
+             }
+             
+             
+            
+             
+        </script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

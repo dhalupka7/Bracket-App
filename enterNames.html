@@ -1,0 +1,336 @@
+ <!--Page that gets names of players from user -->
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>enterNames</title>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="../platforms/android/app/src/main/assets/www/css/index.css" type="text/css">
+        <link rel="stylesheet" href="../node_modules/cordova-android/bin/templates/project/assets/www/css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="css/index.css" type="text/css">
+           <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+    </head>
+
+    <body>
+        
+       
+        <div class="app">
+             <h2>Enter Player Names</h2>
+             
+             
+ <!-- Text inputs for player names-->   
+ 
+ 
+         
+              
+                <input type="text" id="1" name="player1" placeholder="Player 1"><br><br>
+                
+                 <input type="text" id="2" name="player2" placeholder="Player 2"><br><br>
+                                
+                 <input type="text" id="3" name="player3" placeholder="Player 3"><br><br>
+                                  
+                 <input type="text" id="4" name="player4" placeholder="Player 4"><br><br>
+                 
+                 <input type="text" id="5" name="player4" placeholder="Player 5"><br><br>
+
+                 <input type="text" id="6" name="player4" placeholder="Player 6"><br><br>
+                
+                 <input type="text" id="7" name="player4" placeholder="Player 7"><br><br>
+
+                <input type="text" id="8" name="player4" placeholder="Player 8"><br><br>
+                
+                <input type="text" id="9" name="player1" placeholder="Player 9"><br><br>
+                
+                 <input type="text" id="10" name="player2" placeholder="Player 10"><br><br>
+                                
+                 <input type="text" id="11" name="player3" placeholder="Player 11"><br><br>
+                                  
+                 <input type="text" id="12" name="player4" placeholder="Player 12"><br><br>
+                 
+                 <input type="text" id="13" name="player4" placeholder="Player 13"><br><br>
+
+                 <input type="text" id="14" name="player4" placeholder="Player 14"><br><br>
+                
+                 <input type="text" id="15" name="player4" placeholder="Player 15"><br><br>
+
+                <input type="text" id="16" name="player4" placeholder="Player 16"><br><br>
+      
+                <input type="submit" value="Submit" class="buttonX" onclick="passValues(); selectBracket()"> 
+                
+        
+              
+        </div>
+        
+         <script>
+// Displays text box on screen for number of players the user selects
+            document.getElementById(1).style.display=' ';
+            document.getElementById(2).style.display=' ';
+            document.getElementById(3).style.display='none';
+            document.getElementById(4).style.display='none';
+            document.getElementById(5).style.display='none';
+            document.getElementById(6).style.display='none';
+            document.getElementById(7).style.display='none';
+            document.getElementById(8).style.display='none';
+            document.getElementById(9).style.display='none';
+            document.getElementById(10).style.display='none';
+            document.getElementById(11).style.display='none';
+            document.getElementById(12).style.display='none';
+            document.getElementById(13).style.display='none';
+            document.getElementById(14).style.display='none';
+            document.getElementById(15).style.display='none';
+            document.getElementById(16).style.display='none';
+            
+            var numOfPlayers = localStorage.getItem("playerNum");
+     
+     
+     
+     function selectBracket()                                                   //function that gets number of players from local storage and goes to appropriate bracket page
+     {
+         var numOfPlayers = localStorage.getItem("playerNum");
+         
+         if( numOfPlayers < 5)
+         {
+            bracketField4();    
+         }
+         if( numOfPlayers == 5 || numOfPlayers == 6)
+         {
+            bracketField6();          
+         }
+         if( numOfPlayers == 7 || numOfPlayers == 8)
+         {
+            bracketField8();         
+         }
+         if( numOfPlayers == 9 || numOfPlayers == 10)
+         {
+             bracketField10();        
+         }
+         if( numOfPlayers == 11 || numOfPlayers == 12)
+         {
+            bracketField12();        
+         }
+         if( numOfPlayers == 13 || numOfPlayers == 14)
+         {
+             bracketField14();      
+         }
+         if( numOfPlayers == 15 || numOfPlayers == 16)
+         {
+           bracketField16();          
+         }
+         
+         return false;
+     }
+    
+// if statements that display textboxs for the number of players the user selects
+//if number of players is greater or equal to number of players selected by user, display textbox on screen
+
+
+            if(numOfPlayers >= 3)
+            {
+                 document.getElementById(3).style.display='inline';
+            }
+            if(numOfPlayers >= 4)
+            {
+                 document.getElementById(4).style.display='inline';
+            }
+            if(numOfPlayers >= 5)
+            {
+                 document.getElementById(5).style.display='inline';
+            }
+            if(numOfPlayers >= 6)
+            {
+                 document.getElementById(6).style.display='inline';
+            }
+            if(numOfPlayers >= 7)
+            {
+                 document.getElementById(7).style.display='inline';
+            }
+            if(numOfPlayers >= 8)
+            {
+                 document.getElementById(8).style.display='inline';
+            }
+            if(numOfPlayers >= 9)
+            {
+                 document.getElementById(9).style.display='inline';
+            }
+            if(numOfPlayers >= 10)
+            {
+                 document.getElementById(10).style.display='inline';
+            }
+            if(numOfPlayers >= 11)
+            {
+                 document.getElementById(11).style.display='inline';
+            }
+            if(numOfPlayers >= 12)
+            {
+                 document.getElementById(12).style.display='inline';
+            }
+            if(numOfPlayers >= 13)
+            {
+                 document.getElementById(13).style.display='inline';
+            }
+            if(numOfPlayers >= 14)
+            {
+                 document.getElementById(14).style.display='inline';
+            }
+            if(numOfPlayers >= 15)
+            {
+                 document.getElementById(15).style.display='inline';
+            }
+            if(numOfPlayers >= 16)
+            {
+                 document.getElementById(16).style.display='inline';
+            }
+            
+            
+            
+// function to get names from textboxes and save into local storage
+
+            function passValues(numOfPlayers)
+            {
+               
+                var player1 =document.getElementById("1").value;
+                localStorage.setItem("player1", player1);
+                var player2 =document.getElementById("2").value;
+                localStorage.setItem("player2", player2);
+                var player3 =document.getElementById("3").value;
+                localStorage.setItem("player3", player3);
+             
+              var player4 =document.getElementById("4").value;
+              var player5 =document.getElementById("5").value;
+              var player6 =document.getElementById("6").value;
+              var player7 =document.getElementById("7").value;
+              var player8 =document.getElementById("8").value;
+              var player9 =document.getElementById("9").value;
+              var player10 =document.getElementById("10").value;
+              var player11 =document.getElementById("11").value;
+              var player12 =document.getElementById("12").value;
+              var player13 =document.getElementById("13").value;
+              var player14 =document.getElementById("14").value;
+              var player15 =document.getElementById("15").value;
+              var player16 =document.getElementById("16").value;
+              
+// if textbox is empty, set name to BYE
+
+            if(player4.length===0)
+            {
+               
+                     localStorage.setItem("player4", "-BYE-"); 
+            }
+              else{
+                    localStorage.setItem("player4", player4);
+                    }
+            if(player5.length===0)
+            {
+               
+                     localStorage.setItem("player5", "-BYE-"); 
+            }
+              else{
+                    localStorage.setItem("player5", player5);
+            }
+            if(player6.length===0)
+            {
+               
+                     localStorage.setItem("player6", "-BYE-"); 
+            }
+              else{
+                    localStorage.setItem("player6", player6);
+            }
+            if(player7.length===0)
+            {
+               
+                     localStorage.setItem("player7", "-BYE-"); 
+            }
+              else{
+                    localStorage.setItem("player7", player7);
+            }
+            if(player8.length===0)
+            {
+               
+                     localStorage.setItem("player8", "-BYE-"); 
+            }
+              else{
+                    localStorage.setItem("player8", player8);
+            }
+            if(player9.length===0)
+            {
+               
+                     localStorage.setItem("player9", "-BYE-"); 
+            }
+              else{
+                    localStorage.setItem("player9", player9);
+                    }
+            if(player10.length===0)
+            {
+               
+                     localStorage.setItem("player10", "-BYE-"); 
+            }
+              else{
+                    localStorage.setItem("player10", player10);
+            }
+            if(player11.length===0)
+            {
+               
+                     localStorage.setItem("player11", "-BYE-"); 
+            }
+              else{
+                    localStorage.setItem("player11", player11);
+            }
+            if(player12.length===0)
+            {
+               
+                     localStorage.setItem("player12", "-BYE-"); 
+            }
+              else{
+                    localStorage.setItem("player12", player12);
+            }
+            if(player13.length===0)
+            {
+               
+                     localStorage.setItem("player13", "-BYE-"); 
+            }
+              else{
+                    localStorage.setItem("player13", player13);
+            }
+             if(player14.length===0)
+            {
+               
+                     localStorage.setItem("player14", "-BYE-"); 
+            }
+              else{
+                    localStorage.setItem("player14", player14);
+            }
+             if(player15.length===0)
+            {
+               
+                     localStorage.setItem("player15", "-BYE-"); 
+            }
+              else{
+                    localStorage.setItem("player15", player15);
+            }
+             if(player16.length===0)
+            {
+               
+                     localStorage.setItem("player16", "-BYE-"); 
+            }
+              else{
+                    localStorage.setItem("player16", player16);
+            }
+           
+            
+           
+                return false;
+            }
+            
+            
+            
+        </script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

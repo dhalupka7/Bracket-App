@@ -1,0 +1,55 @@
+ <!--Page that asks user to input Title and number of players -->
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>numPlayers</title>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="../platforms/android/app/src/main/assets/www/css/index.css" type="text/css">
+        <link rel="stylesheet" href="../node_modules/cordova-android/bin/templates/project/assets/www/css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="css/index.css" type="text/css">
+        <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+        
+       
+        <div class="app">
+            
+           
+             <h1>Tournament Bracket</h1>            
+             
+<!--User input for Title and number of players -->            
+            <form action="enterNames.html">             
+             <label for="gameTitle"></label>
+             <input size="20" type="text" id="gameTitle" name="gameTitle" placeholder="Enter A Bracket Title"><br>
+             
+            <label for="playerNum"></label>
+             <input size="20" type="number" id="playerNum" name="playerNum" min="3" max="16" placeholder="# of Players"><br><br>    <!-- -->
+           <input  type="submit" class="buttonX" value="Enter" onclick="gameName()">    
+            </form>
+        </div>
+        
+        
+        
+        <script>
+//Gets input from user and saves title and number of players into local storage
+            function gameName()
+            {
+                var gameTitle =document.getElementById("gameTitle").value;      // saves game title
+                localStorage.setItem("gameTitle", gameTitle);
+                
+                var playerNum = document.getElementById("playerNum").value;     // saves number of players
+                localStorage.setItem("playerNum", playerNum);
+                return false;
+            }
+        </script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

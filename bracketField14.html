@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>bracketField14</title>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="../platforms/android/app/src/main/assets/www/css/index.css" type="text/css">
+        <link rel="stylesheet" href="../node_modules/cordova-android/bin/templates/project/assets/www/css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="css/index.css" type="text/css">
+           <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+        
+        <div class="app" style="zoom:33%">
+            
+            <!-- inputs out title -->
+
+            <!-- shows bracket in pictured format
+            
+            XX
+  game1     vs ------
+            XX       |
+                     |------|
+            XX       |      | 
+  game2     vs ------       |
+            XX              |
+                            |
+                            |------
+                            |
+            XX              |
+   game3    vs ------       |
+            XX       |      |
+                     |------|
+            XX       |
+    game4   vs ------
+            XX
+            
+            user selects winner from each game.
+            user before or after selection of winner, can alternate between bracket and games, and matches will update based on users selection.
+            
+            winner gets GREEN space and moves up bracket
+            loser gets RED space and crossed off
+            -->
+            <h1> <span id="gameTitle"></span> </h1> <!-- Table for 14 max players-->
+          
+            
+   
+<table id="14max"  > 
+          
+
+           <tr>
+                 <td> </td>
+                  <td> <button  id = "play13" class="buttonDis" type="submit" onclick="Game13()">  <span id = "player13"></span> <br>-------VS-------<br> </button> <button  id = "play14" class="buttonDis" type="submit" onclick="Game14()">  <span id = "winner1"></span> </button>  </td>
+                  <td><div class =" image3"></div></td>
+          </tr>
+          
+          <tr>
+                   <td>  <button  id = "play1" class="buttonDef" type="submit" onclick="Game1()">  <span id = "player1"></span> <br>-------VS-------<br> </button> <button  id = "play2" class="buttonDef" type="submit" onclick="Game2()">  <span id = "player2"></span> </button> </td>
+                   <td><div class =" image4"></div></td>
+                   <td><div class =" image6"></div></td>   
+          </tr>
+          
+          
+            <tr>
+                   <td></td>
+                   <td></td>
+                   <td><button  id = "play21" class="buttonDis" type="submit" onclick="Game21()">  <span id = "winner7"></span> <br>-------VS-------<br> </button> <button  id = "play22" class="buttonDis" type="submit" onclick="Game22()">  <span id = "winner8"></span> </button> </td>
+                   <td> <div class =" image3"></div></td>  
+            </tr>
+          
+          
+          <tr>
+                  <td><button  id = "play3" class="buttonDef" type="submit" onclick="Game3()">  <span id = "player3"></span> <br>-------VS-------<br> </button> <button  id = "play4" class="buttonDef" type="submit" onclick="Game4()">  <span id = "player4"></span> </button> </td>
+                   <td><div class =" image3"></div></td>
+                   <td><div class =" image7"></div></td>  
+                  <td><div class =" image6"></div></td>
+          </tr>
+          
+           <tr>
+                  <td> </td>
+                  <td> <button  id = "play15" class="buttonDis" type="submit" onclick="Game15()">  <span id = "winner2"></span> <br>-------VS-------<br> </button> <button  id = "play16" class="buttonDis" type="submit" onclick="Game16()">  <span id = "winner3"></span> </button>  </td>
+                   <td><div class =" image4"></div></td>
+                   <td><div class =" image6"></div></td>
+          </tr>
+          
+          <tr>
+                 <td><button  id = "play5" class="buttonDef" type="submit" onclick="Game5()">  <span id = "player5"></span> <br>-------VS-------<br> </button> <button  id = "play6" class="buttonDef" type="submit" onclick="Game6()">  <span id = "player6"></span> </button> </td>  
+                <td><div class =" image4"></div></td>
+                <td></td>
+                <td><div class =" image6"></div></td>
+          </tr>
+          
+          <tr>
+              <td> </td>
+               <td> </td>
+                <td> </td>
+                 <td><button  id = "play25" class="buttonDis" type="submit" onclick="Game25()">  <span id = "winner11"></span> <br>-------VS-------<br> </button> <button  id = "play26" class="buttonDis" type="submit" onclick="Game26()">  <span id = "winner12"></span> </button> </td>
+                 
+          </tr>
+          
+ 
+          <tr>
+              <td><button  id = "play7" class="buttonDef" type="submit" onclick="Game7()">  <span id = "player7"></span> <br>-------VS-------<br> </button> <button  id = "play8" class="buttonDef" type="submit" onclick="Game8()">  <span id = "player8"></span> </button> </td>   
+              <td><div class =" image3"></div></td>
+              <td></td>
+              <td><div class =" image7"></div></td>
+             
+          </tr>
+          
+           <tr>
+                 <td> </td>
+                <td> <button  id = "play17" class="buttonDis" type="submit" onclick="Game17()">  <span id = "winner4"></span> <br>-------VS-------<br> </button> <button  id = "play18" class="buttonDis" type="submit" onclick="Game18()">  <span id = "winner5"></span> </button>  </td>
+                  <td><div class =" image3"></div></td>
+                  <td><div class =" image7"></div></td>  
+          </tr>
+          
+          <tr>
+            <td>  <button  id = "play9" class="buttonDef" type="submit" onclick="Game9()">  <span id = "player9"></span> <br>-------VS-------<br> </button> <button  id = "play10" class="buttonDef" type="submit" onclick="Game10()">  <span id = "player10"></span> </button> </td>    
+            <td><div class =" image4"></div></td>
+            <td><div class =" image6"></div></td>  
+            <td><div class =" image7"></div></td>
+           
+          </tr>
+          
+          
+            <tr>
+                <td></td>
+                <td></td>
+                <td><button  id = "play23" class="buttonDis" type="submit" onclick="Game23()">  <span id = "winner9"></span> <br>-------VS-------<br> </button>  <button  id = "play24" class="buttonDis" type="submit" onclick="Game24()">  <span id = "winner10"></span> </button> </td>
+                <td> <div class =" image4"></div></td>
+                
+            </tr>
+          
+          
+          <tr>
+              <td><button  id = "play11" class="buttonDef" type="submit" onclick="Game11()">  <span id = "player11"></span> <br>-------VS-------<br> </button> <button  id = "play12" class="buttonDef" type="submit" onclick="Game12()">  <span id = "player12"></span> </button> </td>
+              <td><div class =" image3"></div></td>
+              <td><div class =" image7"></div></td>  
+          </tr>
+          
+           <tr>
+                  <td> </td>
+                 <td> <button  id = "play19" class="buttonDis" type="submit" onclick="Game19()">  <span id = "winner6"></span> <br>-------VS-------<br> </button> <button  id = "play20" class="buttonDis" type="submit" onclick="Game20()">  <span id = "player14"></span> </button>  </td>
+                 <td><div class =" image4"></div></td>
+          </tr>
+                   
+</table>        
+          
+      
+            
+        </div>
+        
+                
+                
+        <script>
+
+// Gets values from local storage and outputs on screen         
+
+               document.getElementById("gameTitle").innerHTML = localStorage.getItem("gameTitle");
+            document.getElementById("player1").innerHTML = localStorage.getItem("player1");
+             document.getElementById("player2").innerHTML = localStorage.getItem("player2");
+              document.getElementById("player3").innerHTML = localStorage.getItem("player3");
+               document.getElementById("player4").innerHTML = localStorage.getItem("player4");
+                 document.getElementById("player5").innerHTML = localStorage.getItem("player5");
+                  document.getElementById("player6").innerHTML = localStorage.getItem("player6");
+                      document.getElementById("player7").innerHTML = localStorage.getItem("player7");
+                          document.getElementById("player8").innerHTML = localStorage.getItem("player8");
+                             document.getElementById("player9").innerHTML = localStorage.getItem("player9");
+                                document.getElementById("player10").innerHTML = localStorage.getItem("player10");
+                                   document.getElementById("player11").innerHTML = localStorage.getItem("player11");
+                                     document.getElementById("player12").innerHTML = localStorage.getItem("player12");
+                                      document.getElementById("player13").innerHTML = localStorage.getItem("player13");
+                                          document.getElementById("player14").innerHTML = localStorage.getItem("player14");
+                                
+         
+               function check1()                                                // Functions to check whether previous game was selected
+              {
+               if(document.getElementById("play1").className !== "buttonDef")  
+               {
+                    document.getElementById("play13").className = "buttonDef";
+                    document.getElementById("play14").className = "buttonDef";
+               }
+              }
+               function check2()
+              {
+               if(document.getElementById("play11").className !== "buttonDef")  
+               {
+                    document.getElementById("play19").className = "buttonDef";
+                    document.getElementById("play20").className = "buttonDef";
+               }
+              }
+                 function check3()
+              {
+               if(document.getElementById("play3").className !== "buttonDef" && document.getElementById("play5").className !== "buttonDef")  
+               {
+                    document.getElementById("play15").className = "buttonDef";
+                    document.getElementById("play16").className = "buttonDef";
+               }
+              }
+                 function check4()
+              {
+               if(document.getElementById("play7").className !== "buttonDef" && document.getElementById("play9").className !== "buttonDef")  
+               {
+                    document.getElementById("play17").className = "buttonDef";
+                    document.getElementById("play18").className = "buttonDef";
+               }
+              }
+              
+              
+              function check5()
+              {
+               if(document.getElementById("play1").className !== "buttonDef" && document.getElementById("play3").className !== "buttonDef" 
+                     &&  document.getElementById("play5").className !== "buttonDef" && document.getElementById("play13").className !== "buttonDef" 
+                     &&document.getElementById("play15").className !== "buttonDef" 
+                    )  
+               {
+                    document.getElementById("play21").className = "buttonDef";
+                    document.getElementById("play22").className = "buttonDef";
+               }
+              }
+              function check6()
+              {
+               if(document.getElementById("play17").className !== "buttonDef" && document.getElementById("play19").className !== "buttonDef"
+                       &&  document.getElementById("play9").className !== "buttonDef" && document.getElementById("play11").className !== "buttonDef" 
+                       && document.getElementById("play7").className !== "buttonDef")  
+               {
+                    document.getElementById("play23").className = "buttonDef";
+                    document.getElementById("play24").className = "buttonDef";
+               }
+              }
+              
+              
+              
+             
+              function check7()
+              {
+               if(document.getElementById("play13").className !== "buttonDef" && document.getElementById("play15").className !== "buttonDef"
+                       && document.getElementById("play17").className !== "buttonDef" && document.getElementById("play19").className !== "buttonDef"
+                        && document.getElementById("play21").className !== "buttonDef" && document.getElementById("play23").className !== "buttonDef")  
+               {
+                    document.getElementById("play25").className = "buttonFinal";
+                    document.getElementById("play26").className = "buttonFinal";
+               }
+              }
+              
+     
+     
+                                                                                // Gets ID of game, changes classes of players to won or lost, saves winner onto next game
+             
+             function Game1()
+             {
+              document.getElementById("play1").className = "buttonWin";
+               document.getElementById("play2").className = "buttonLose";
+               document.getElementById("winner1").innerHTML = localStorage.getItem("player1");
+                localStorage.setItem("winner1",localStorage.getItem("player1"));
+               check1();
+               
+             }
+             function Game2()
+             {
+              document.getElementById("play2").className = "buttonWin";
+               document.getElementById("play1").className = "buttonLose";
+               document.getElementById("winner1").innerHTML = localStorage.getItem("player2");
+               localStorage.setItem("winner1",localStorage.getItem("player2"));
+               check1();
+             }
+             
+              function Game3()
+             {
+                
+              document.getElementById("play3").className = "buttonWin";
+               document.getElementById("play4").className = "buttonLose";
+               document.getElementById("winner2").innerHTML = localStorage.getItem("player3");
+                localStorage.setItem("winner2",localStorage.getItem("player3"));
+               check3();
+             }
+             function Game4()
+             {
+              document.getElementById("play4").className = "buttonWin";
+               document.getElementById("play3").className = "buttonLose";
+               document.getElementById("winner2").innerHTML = localStorage.getItem("player4");
+                localStorage.setItem("winner2",localStorage.getItem("player4"));
+               check3();
+             }
+             function Game5()
+             {
+              
+              document.getElementById("play5").className = "buttonWin";
+               document.getElementById("play6").className = "buttonLose";
+               document.getElementById("winner3").innerHTML = localStorage.getItem("player5");
+                localStorage.setItem("winner3",localStorage.getItem("player5"));
+               check3();
+               
+             }
+             function Game6()
+             {
+            
+              document.getElementById("play6").className = "buttonWin";
+               document.getElementById("play5").className = "buttonLose";
+               document.getElementById("winner3").innerHTML = localStorage.getItem("player6");
+               localStorage.setItem("winner3",localStorage.getItem("player6"));
+               check3();
+             }
+             
+              function Game7()
+             {
+               
+              document.getElementById("play7").className = "buttonWin";
+               document.getElementById("play8").className = "buttonLose";
+               document.getElementById("winner4").innerHTML = localStorage.getItem("player7");
+                localStorage.setItem("winner4",localStorage.getItem("player7"));
+               check4();
+             }
+             function Game8()
+             {
+             
+              document.getElementById("play8").className = "buttonWin";
+               document.getElementById("play7").className = "buttonLose";
+               document.getElementById("winner4").innerHTML = localStorage.getItem("player8");
+                localStorage.setItem("winner4",localStorage.getItem("player8"));
+               check4();
+             }
+                function Game9()
+             {
+               
+              document.getElementById("play9").className = "buttonWin";
+               document.getElementById("play10").className = "buttonLose";
+               document.getElementById("winner5").innerHTML = localStorage.getItem("player9");
+                localStorage.setItem("winner5",localStorage.getItem("player9"));
+               check4();
+             }
+             function Game10()
+             {
+             
+              document.getElementById("play10").className = "buttonWin";
+               document.getElementById("play9").className = "buttonLose";
+               document.getElementById("winner5").innerHTML = localStorage.getItem("player10");
+                localStorage.setItem("winner5",localStorage.getItem("player10"));
+               check4();
+             }
+                function Game11()
+             {
+                
+              document.getElementById("play11").className = "buttonWin";
+               document.getElementById("play12").className = "buttonLose";
+               document.getElementById("winner6").innerHTML = localStorage.getItem("player11");
+                localStorage.setItem("winner6",localStorage.getItem("player11"));
+               check2();
+             }
+             function Game12()
+             {
+              
+              document.getElementById("play12").className = "buttonWin";
+               document.getElementById("play11").className = "buttonLose";
+               document.getElementById("winner6").innerHTML = localStorage.getItem("player12");
+                localStorage.setItem("winner6",localStorage.getItem("player12"));
+               check2();
+             }
+              function Game13()
+             {
+                if(document.getElementById("play13").className === "buttonDis")
+                 {
+                    return;
+                 } 
+              document.getElementById("play13").className = "buttonWin";
+               document.getElementById("play14").className = "buttonLose";
+               document.getElementById("winner7").innerHTML = localStorage.getItem("player13");
+                localStorage.setItem("winner7",localStorage.getItem("player13"));
+               check5();
+             }
+             function Game14()
+             {
+                if(document.getElementById("play14").className === "buttonDis")
+                 {
+                    return;
+                 }
+              document.getElementById("play14").className = "buttonWin";
+               document.getElementById("play13").className = "buttonLose";
+               document.getElementById("winner7").innerHTML = localStorage.getItem("winner1");
+                localStorage.setItem("winner7",localStorage.getItem("winner1"));
+               check5();
+             }
+              function Game15()
+             {
+                if(document.getElementById("play15").className === "buttonDis")
+                 {
+                    return;
+                 } 
+              document.getElementById("play15").className = "buttonWin";
+               document.getElementById("play16").className = "buttonLose";
+               document.getElementById("winner8").innerHTML = localStorage.getItem("winner2");
+                localStorage.setItem("winner8",localStorage.getItem("winner2"));
+               check5();
+             }
+             function Game16()
+             {
+                if(document.getElementById("play16").className === "buttonDis")
+                 {
+                    return;
+                 }
+              document.getElementById("play16").className = "buttonWin";
+               document.getElementById("play15").className = "buttonLose";
+               document.getElementById("winner8").innerHTML = localStorage.getItem("winner3");
+                localStorage.setItem("winner8",localStorage.getItem("winner3"));
+               check5();
+             }
+              function Game17()
+             {
+                if(document.getElementById("play17").className === "buttonDis")
+                 {
+                    return;
+                 } 
+              document.getElementById("play17").className = "buttonWin";
+               document.getElementById("play18").className = "buttonLose";
+               document.getElementById("winner9").innerHTML = localStorage.getItem("winner4");
+                localStorage.setItem("winner9",localStorage.getItem("winner4"));
+               check6();
+             }
+             function Game18()
+             {
+                if(document.getElementById("play18").className === "buttonDis")
+                 {
+                    return;
+                 }
+              document.getElementById("play18").className = "buttonWin";
+               document.getElementById("play17").className = "buttonLose";
+               document.getElementById("winner9").innerHTML = localStorage.getItem("winner5");
+                localStorage.setItem("winner9",localStorage.getItem("winner5"));
+               check6();
+             }
+              function Game19()
+             {
+                if(document.getElementById("play19").className === "buttonDis")
+                 {
+                    return;
+                 } 
+              document.getElementById("play19").className = "buttonWin";
+               document.getElementById("play20").className = "buttonLose";
+               document.getElementById("winner10").innerHTML = localStorage.getItem("winner6");
+                localStorage.setItem("winner10",localStorage.getItem("winner6"));
+               check6();
+             }
+             function Game20()
+             {
+                if(document.getElementById("play20").className === "buttonDis")
+                 {
+                    return;
+                 }
+              document.getElementById("play20").className = "buttonWin";
+               document.getElementById("play19").className = "buttonLose";
+               document.getElementById("winner10").innerHTML = localStorage.getItem("player14");
+                localStorage.setItem("winner10",localStorage.getItem("player14"));
+               check6();
+             }
+             function Game21()
+             {
+                if(document.getElementById("play21").className === "buttonDis")
+                 {
+                    return;
+                 } 
+              document.getElementById("play21").className = "buttonWin";
+               document.getElementById("play22").className = "buttonLose";
+               document.getElementById("winner11").innerHTML = localStorage.getItem("winner7");
+                localStorage.setItem("winner11",localStorage.getItem("winner7"));
+               check7();
+             }
+             function Game22()
+             {
+                if(document.getElementById("play22").className === "buttonDis")
+                 {
+                    return;
+                 }
+              document.getElementById("play22").className = "buttonWin";
+               document.getElementById("play21").className = "buttonLose";
+               document.getElementById("winner11").innerHTML = localStorage.getItem("winner8");
+                localStorage.setItem("winner11",localStorage.getItem("winner8"));
+               check7();
+             }
+             function Game23()
+             {
+                if(document.getElementById("play23").className === "buttonDis")
+                 {
+                    return;
+                 } 
+              document.getElementById("play23").className = "buttonWin";
+               document.getElementById("play24").className = "buttonLose";
+               document.getElementById("winner12").innerHTML = localStorage.getItem("winner9");
+                localStorage.setItem("winner12",localStorage.getItem("winner9"));
+               check7();
+             }
+             function Game24()
+             {
+                if(document.getElementById("play24").className === "buttonDis")
+                 {
+                    return;
+                 }
+              document.getElementById("play24").className = "buttonWin";
+               document.getElementById("play23").className = "buttonLose";
+               document.getElementById("winner12").innerHTML = localStorage.getItem("winner10");
+                localStorage.setItem("winner12",localStorage.getItem("winner10"));
+               check7();
+             }
+             
+              
+             
+             
+             
+             function Game25()
+             {
+                if(document.getElementById("play25").className === "buttonDis")
+                 {
+                    return;
+                 }
+              document.getElementById("play25").className = "buttonWin";
+               document.getElementById("play26").className = "buttonLose";
+               localStorage.setItem("finalWinner",localStorage.getItem("winner11"));
+               window.location.href="congratsPage.html"; 
+             }
+             function Game26()
+             {
+               if(document.getElementById("play26").className === "buttonDis")
+                 {
+                    return;
+                 }
+              document.getElementById("play26").className = "buttonWin";
+               document.getElementById("play25").className = "buttonLose";
+               localStorage.setItem("finalWinner",localStorage.getItem("winner12"));
+               window.location.href="congratsPage.html"; 
+             }
+            
+            
+             
+        </script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
